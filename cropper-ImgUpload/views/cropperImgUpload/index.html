@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>笔记</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="cropper.css">
+    <style type="text/css">
+    html,
+    body {
+        height: 100%;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .uploadImg {
+        text-align: center;
+        margin: 100px auto;
+        width: 100px;
+        line-height: 40px;
+        height: 40px;
+        background-color: #ff6600;
+        text-align: center;
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="uploadImg">上传图片</div>
+</body>
+
+</html>
+<script type="text/javascript" src="/static/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="cropper.js"></script>
+<script type="text/javascript" src="imgCut.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('.uploadImg').click(function() {
+        imgUpload({
+            uploadUrl: 'http://xxxxxxxxx', //需要接口接收参数为image-file,如果不是,请在插件中UserTo处进行修改
+            aspectRatio: 9 / 16,
+            callBack: function(data) {
+                console.log(data);
+            }
+        });
+    });
+})
+</script>
